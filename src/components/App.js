@@ -38,7 +38,10 @@ class App extends Component {
   }
 
   checkResult() {
-    if (this.state.turn === "O") {
+    if (this.state.result !== null) {
+      return;
+    }
+    else if (this.state.turn === "O") {
       this.collectIndexes(this.state.squares, "X");
     } else {
       this.collectIndexes(this.state.squares, "O");
@@ -54,7 +57,9 @@ class App extends Component {
     }
     WINNING_COMBINATIONS.forEach((combo) => {
       if(_.intersection(combo, indexes).length === combo.length) {
-        console.log(`${val} has won!`);
+        this.setState({
+          result: `${val} has won!`
+        })
       }
     });
   }
@@ -90,7 +95,9 @@ class App extends Component {
     this.checkResult();
     return (
       <div className="App">
-        <Header turn={this.state.turn} />
+        <Header 
+          result={this.state.result} 
+          turn={this.state.turn} />
         <Board 
           onPlacePiece={this.placePiece} 
           turn={this.state.turn}
