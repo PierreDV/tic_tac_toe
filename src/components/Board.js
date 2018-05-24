@@ -5,8 +5,9 @@ const Board = (props) => {
   const grid = props.squares.map((square, index) => {
     return (
       <Square 
+        id={index}
         turn={props.turn}
-        onPlacePiece={props.onPlacePiece} 
+        onPlacePiece={props.onPlacePiece}
         key={index}/>
     );
   });

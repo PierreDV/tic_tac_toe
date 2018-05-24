@@ -27,11 +27,25 @@ class App extends Component {
   placePiece(event, turn) {
     if (turn === "o") {
       this.setState({
-        turn: "x"
+        turn: "x",
+        squares: this.state.squares.map((square, index) => {
+          if (index === parseInt(event.target.id)) {
+            return turn
+          } else {
+            return square
+          }
+        })
       });
     } else {
       this.setState({
-        turn: "o"
+        turn: "o",
+        squares: this.state.squares.map((square, index) => {
+          if (index === parseInt(event.target.id)) {
+            return turn
+          } else {
+            return square
+          }
+        })
       });
     }
     event.target.innerHTML = turn;
