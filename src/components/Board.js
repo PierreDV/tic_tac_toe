@@ -1,18 +1,14 @@
 import React from 'react';
 import Square from './Square';
 
-const Board = () => {
+const Board = ({squares}) => {
+  const grid = squares.map((square, index) => {
+    return <Square key={index}/>
+  });
+
   return (
     <div className="Board">
-        <Square />
-        <Square />
-        <Square />
-        <Square />
-        <Square />
-        <Square />
-        <Square />
-        <Square />
-        <Square />
+      {grid}
     </div>
   );
 }
