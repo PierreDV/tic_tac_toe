@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      turn: "o",
+      turn: "O",
       squares: [
         null,
         null,
@@ -25,9 +25,9 @@ class App extends Component {
   }
 
   placePiece(event, turn) {
-    if (turn === "o") {
+    if (turn === "O") {
       this.setState({
-        turn: "x",
+        turn: "X",
         squares: this.state.squares.map((square, index) => {
           if (index === parseInt(event.target.id)) {
             return turn
@@ -38,7 +38,7 @@ class App extends Component {
       });
     } else {
       this.setState({
-        turn: "o",
+        turn: "O",
         squares: this.state.squares.map((square, index) => {
           if (index === parseInt(event.target.id)) {
             return turn
@@ -54,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header turn={this.state.turn} />
         <Board 
           onPlacePiece={this.placePiece} 
           turn={this.state.turn}
