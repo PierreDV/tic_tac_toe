@@ -2,7 +2,7 @@ import React from 'react';
 
 const Square = (props) => {
   return (
-    <div className="Square">X</div>
+    <div onClick={(e) => {e.target.innerHTML = 'X'}} className="Square"></div>
   )
 }
 
