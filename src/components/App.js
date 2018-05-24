@@ -20,13 +20,31 @@ class App extends Component {
         null
       ]
     };
+
+    this.placePiece = this.placePiece.bind(this);
+  }
+
+  placePiece(turn) {
+    if (turn === "o") {
+      this.setState({
+        turn: "x"
+      });
+    } else {
+      this.setState({
+        turn: "o"
+      });
+    }
+    console.log(turn);
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Board squares={this.state.squares} />
+        <Board 
+          onPlacePiece={this.placePiece} 
+          turn={this.state.turn}
+          squares={this.state.squares} />
       </div>
     );
   }

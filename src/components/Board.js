@@ -1,9 +1,14 @@
 import React from 'react';
 import Square from './Square';
 
-const Board = ({squares}) => {
-  const grid = squares.map((square, index) => {
-    return <Square key={index}/>
+const Board = (props) => {
+  const grid = props.squares.map((square, index) => {
+    return (
+      <Square 
+        turn={props.turn}
+        onPlacePiece={props.onPlacePiece} 
+        key={index}/>
+    );
   });
 
   return (
