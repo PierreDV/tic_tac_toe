@@ -21,7 +21,8 @@
   "dependencies": {
     "react": "^16.4.0",
     "react-addons-update": "^15.6.2",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "underscore": "^1.9.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
