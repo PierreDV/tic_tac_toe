@@ -24,7 +24,7 @@ class App extends Component {
     this.placePiece = this.placePiece.bind(this);
   }
 
-  placePiece(turn) {
+  placePiece(event, turn) {
     if (turn === "o") {
       this.setState({
         turn: "x"
@@ -34,7 +34,7 @@ class App extends Component {
         turn: "o"
       });
     }
-    console.log(turn);
+    event.target.innerHTML = turn;
   }
 
   render() {
