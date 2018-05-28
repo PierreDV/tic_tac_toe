@@ -48,6 +48,16 @@ class App extends Component {
     }
   }
 
+  cleanArray(actual) {
+    let newArray = new Array();
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i]) {
+        newArray.push(actual[i]);
+      }
+    }
+    return newArray;
+  }
+
   collectIndexes(arr, val) {
     let indexes = [], i;
     for(i = 0; i < arr.length; i++) {
@@ -60,8 +70,14 @@ class App extends Component {
         this.setState({
           result: `${val} has won!`
         })
+        return
       }
     });
+    if (this.cleanArray(this.state.squares).length === 9 && this.state.result === null) {
+      this.setState({
+        result: 'The game is drawn'
+      })
+    } 
   }
 
   placePiece(event, turn) {
