@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'underscore';
 import Header from './Header';
-import Board from './Board';
+import Board from '../containers/Board';
 
 const WINNING_COMBINATIONS = [
   [0,1,2],
@@ -114,10 +114,7 @@ class App extends Component {
         <Header 
           result={this.state.result} 
           turn={this.state.turn} />
-        <Board 
-          onPlacePiece={this.placePiece} 
-          turn={this.state.turn}
-          squares={this.state.squares} />
+        <Board />
       </div>
     );
   }
