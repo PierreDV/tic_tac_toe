@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from '../containers/Board';
+import Board from './Board';
 import Header from './Header';
 
 const App = () => {
