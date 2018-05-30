@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Square = (props) => {
-  return (
-    <div className="Square">X</div>
+const Square = () => {
+  return(
+    <div>square</div>
   );
 }
 

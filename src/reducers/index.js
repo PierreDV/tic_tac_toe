@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import SquaresReducer from './squares';
+import Board from './board';
 
 const rootReducer = combineReducers({
-  squares: SquaresReducer
+  board: Board
 });
 
 export default rootReducer;
