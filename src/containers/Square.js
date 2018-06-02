@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { placePiece } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class Square extends Component {
   constructor(props) {
@@ -8,7 +10,11 @@ class Square extends Component {
 
   render() {
     return(
-      <div className="Square">{this.props.marker}</div>
+      <div 
+        className="Square"
+        onClick={() => this.props.placePiece(this.props.position)}
+      >{this.props.marker}
+      </div>
     );
   }
 }
@@ -19,4 +25,8 @@ function mapStateToProps(state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps)(Square);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ placePiece: placePiece }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Square);
