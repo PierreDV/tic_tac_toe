@@ -12,8 +12,9 @@ class Square extends Component {
     return(
       <div 
         className="Square"
-        onClick={() => this.props.placePiece(this.props.position)}
-      >{this.props.marker}
+        onClick={() => { this.props.placePiece(this.props.position, this.props.turn) }}
+      >
+        {this.props.marker}
       </div>
     );
   }
@@ -21,7 +22,8 @@ class Square extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    marker: state.board[ownProps.position]
+    marker: state.board[ownProps.position],
+    turn: state.turn
   }
 }
 
