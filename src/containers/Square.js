@@ -12,7 +12,7 @@ class Square extends Component {
     return(
       <div 
         className="Square"
-        onClick={() => { this.props.placePiece(this.props.position, this.props.playerTurn) }}
+        onClick={() => { this.props.placePiece(this.props.board, this.props.position, this.props.playerTurn) }}
       >
         {this.props.marker}
       </div>

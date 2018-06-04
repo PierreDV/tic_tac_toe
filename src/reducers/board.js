@@ -15,16 +15,16 @@ const STARTING_POSITION = [
 export default function(state = STARTING_POSITION, action) {
   switch(action.type) {
   case PLACE_PIECE:  
-    return state.map((x, i) => {
+    return state.map((square, i) => {
       if(i === action.position){
         return {
-          ...state,
+          ...state[i],
           marker: action.playerTurn
         }
       } else {
         return {
-          ...state,
-          marker: x.marker
+          ...state[i],
+          marker: square.marker
         }
       }
     });
