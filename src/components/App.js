@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './Board';
-import Header from './Header';
+import Header from '../containers/Header';
 
 const App = () => {
   return(
