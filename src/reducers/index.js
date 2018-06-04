@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import Board from './board';
-import Turn from './turn';
+import PlayerTurn from './player_turn';
 import Result from './result';
 
 const rootReducer = combineReducers({
   board: Board,
-  turn: Turn,
+  playerTurn: PlayerTurn,
   result: Result
 });
 

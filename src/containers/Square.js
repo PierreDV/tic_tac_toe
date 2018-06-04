@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { placePiece } from '../actions/index';
+import { placePiece, checkResult } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class Square extends Component {
@@ -12,7 +12,7 @@ class Square extends Component {
     return(
       <div 
         className="Square"
-        onClick={() => { this.props.placePiece(this.props.position, this.props.turn) }}
+        onClick={() => { this.props.placePiece(this.props.position, this.props.playerTurn) }}
       >
         {this.props.marker}
       </div>
@@ -22,8 +22,9 @@ class Square extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    marker: state.board[ownProps.position],
-    turn: state.turn
+    marker: state.board[ownProps.position].marker,
+    playerTurn: state.playerTurn,
+    board: state.board
   }
 }
 
