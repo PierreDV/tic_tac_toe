@@ -3,10 +3,8 @@ import Board from './board';
 import PlayerTurn from './player_turn';
 import Result from './result';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   board: Board,
   playerTurn: PlayerTurn,
   result: Result
-});
-
-export default rootReducer;
+})

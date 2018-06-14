@@ -1,10 +1,9 @@
-export const PLACE_PIECE = 'PLACE_PIECE';
+export const PLACE_MARKER = 'PLACE_MARKER';
 
-export function placePiece(board, position, playerTurn) {
+export function placeMarker(playerTurn, position) {
   return {
-    type: PLACE_PIECE,
-    board: board,
-    position: position,
-    playerTurn: playerTurn
+    type: PLACE_MARKER,
+    playerTurn: playerTurn,
+    position: position
   };
 }

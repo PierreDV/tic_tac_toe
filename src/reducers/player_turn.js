@@ -1,8 +1,8 @@
-import { PLACE_PIECE } from '../actions/index';
+import { PLACE_MARKER } from '../actions/index';
 
 export default function(state = 'x', action) {
   switch(action.type) {
-  case PLACE_PIECE:
+  case PLACE_MARKER:
     if(action.playerTurn === 'x') {
       return 'o';
     } else {

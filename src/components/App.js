@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from './Board';
+import Board from '../containers/Board';
 import Header from '../containers/Header';
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
     <div>
       <Header />
       <Board />
-    </div>
+  </div>
   );
 }
 
